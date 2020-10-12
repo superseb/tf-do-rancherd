@@ -1,0 +1,88 @@
+# DigitalOcean API token
+do_token = "your_token"
+
+# Admin password to access Rancher
+admin_password = "admin"
+
+# Resources will be prefixed with this to avoid clashing names
+prefix = "myname"
+
+# rancher/rancher image tag to use
+rancher_version = "v2.2.6"
+
+# Rancher server audit log level (0-3)
+audit_level = 0
+
+# Extra arguments for rancher/rancher container
+rancher_args = ""
+
+#rancher_args = "--debug"
+# Region where server should be created
+region_server = "lon1"
+
+# Region where agent(s) should be created
+region_agent = "lon1"
+
+# Count of agent nodes with role all
+count_agent_all_nodes = "3"
+
+# Count of agent nodes with role etcd
+count_agent_etcd_nodes = "0"
+
+# Count of agent nodes with role controlplane
+count_agent_controlplane_nodes = "0"
+
+# Count of agent nodes with role worker
+count_agent_worker_nodes = "0"
+
+# Count of tools nodes
+count_tools_nodes = "0"
+
+# Docker version of host running `rancher/rancher`
+docker_version_server = "18.09"
+
+# Docker version of host being added to a cluster (running `rancher/rancher-agent`)
+docker_version_agent = "18.09"
+
+# Docker root on agent nodes
+docker_root = ""
+
+# K8s version of created cluster
+#k8s_version = "v1.12.0-rancher1-1"
+k8s_version = ""
+
+# Droplet sizes
+all_size = "s-2vcpu-4gb"
+
+etcd_size = "s-2vcpu-4gb"
+
+controlplane_size = "s-2vcpu-4gb"
+
+worker_size = "s-2vcpu-4gb"
+
+tools_size = "s-4vcpu-8gb"
+
+# Image of host running `rancher/rancher`
+image_server = "ubuntu-18-04-x64"
+
+# Image of host being added to a cluster (running `rancher/rancher-agent`)
+image_agent = "ubuntu-18-04-x64"
+
+# Image for host running tools
+image_tools = "ubuntu-18-04-x64"
+
+## User for server image
+user_server = "root"
+
+## User for agent image
+user_agent = "root"
+
+## User for tools image
+user_tools = "root"
+
+# DigitalOcean ssh-keyid
+# ssh_keys = [ "your_key_id" ]
+# Retrieve using (max 200 keys in account): `curl -s -X GET -H "Content-Type: application/json" -H "Authorization: Bearer $DIGITALOCEAN_TOKEN" "https://api.digitalocean.com/v2/account/keys?per_page=200"  | jq -r '.ssh_keys[] | select(.name=="YOUR_KEY_NAME") | .id'`
+# If you have more than 200 keys in your account, use: `doctl -t $DIGITALOCEAN_TOKEN compute ssh-key list | grep YOUR_KEY_NAME | awk '{ print $1 }'`
+# If this is not specified, you will get an email with the root password
+ssh_keys = []
