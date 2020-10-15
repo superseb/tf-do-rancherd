@@ -1,4 +1,4 @@
-# Terraform config to launch Rancher 2
+# Terraform config to launch rancherd
 
 **Note: requires Terraform v0.13**
 
@@ -6,7 +6,7 @@
 
 This Terraform setup will:
 
-- Start a droplet running `rancher/rancher` version specified in `rancher_version`
+- Start a droplet running `rancherd` using `get.rancher.io`
 - Create a custom cluster called `cluster_name`
 - Start `count_agent_all_nodes` amount of droplets and add them to the custom cluster with all roles
 - Create an ssh_config file in the terraform module directory for connecting to the droplets
@@ -18,7 +18,7 @@ This Terraform setup will:
 
 ## Other options
 
-All available options/variables are described in [terraform.tfvars.example](https://github.com/superseb/tf-do-rancher2/blob/master/terraform.tfvars.example).
+All available options/variables are described in [terraform.tfvars.example](https://github.com/superseb/tf-do-rancherd/blob/master/terraform.tfvars.example).
 
 ## Tools
 
@@ -41,9 +41,9 @@ Note: replace PRIVATE_IP or PUBLIC_IP with tools-private-ip or tools-public-ip
 
 You can use the use the auto-generated ssh_config file to connect to the droplets by droplet name, e.g. `ssh <prefix>-rancheragent-all-0` or `ssh <prefix>-rancherserver` etc. To do so, you have two options:
 
-1. Add an `Include` directive at the top of the SSH config file in your home directory (`~/.ssh/config`) to include the ssh_config file at the location you have checked out the this repository, e.g. `Include ~/git/tf-do-rancher2/ssh_config`.
+1. Add an `Include` directive at the top of the SSH config file in your home directory (`~/.ssh/config`) to include the ssh_config file at the location you have checked out the this repository, e.g. `Include ~/git/tf-do-rancherd/ssh_config`.
 
-2. Specify the ssh_config file when invoking `ssh` via the `-F` option, e.g. `ssh -F ~/git/tf-do-rancher2/ssh_config <host>`.
+2. Specify the ssh_config file when invoking `ssh` via the `-F` option, e.g. `ssh -F ~/git/tf-do-rancherd/ssh_config <host>`.
 
 ## How to use
 
