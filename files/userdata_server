@@ -15,7 +15,7 @@ for image in $curlimage $jqimage; do
   done
 done
 
-curl -sLf https://get.rancher.io | sh
+INSTALL_RANCHERD_VERSION=${rancher_version} curl -sLf https://get.rancher.io | sh
 systemctl enable rancherd-server
 systemctl start rancherd-server
 

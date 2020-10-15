@@ -6,7 +6,7 @@
 
 This Terraform setup will:
 
-- Start a droplet running `rancherd` using `get.rancher.io`
+- Start a droplet running `rancherd` version `rancher_version` using `get.rancher.io` (`INSTALL_RANCHERD_VERSION`)
 - Create a custom cluster called `cluster_name`
 - Start `count_agent_all_nodes` amount of droplets and add them to the custom cluster with all roles
 - Create an ssh_config file in the terraform module directory for connecting to the droplets
