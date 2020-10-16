@@ -7,7 +7,7 @@ systemctl enable rancherd-server
 systemctl start rancherd-server
 
 while true; do
-  curl -sLk https://127.0.0.1:8443/ping && break
+  curl -sLk https://127.0.0.1:8443/ping && sleep 10 && break
   sleep 5
 done
 
